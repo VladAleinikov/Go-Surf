@@ -1,0 +1,21 @@
+.header__nav .nav__list {
+      @include flex(column, $gap: 37px);
+      margin-bottom: 38px;
+
+      .nav__item {
+            @include flex(column, $gap: 6px);
+            text-align: center;
+
+            p, path {
+                  transition: .5s;
+            }
+            &:hover {
+                  p {
+                        color: $accent;
+                  }
+                  path {
+                        fill: $accent;
+                  }
+            }
+      }
+}
