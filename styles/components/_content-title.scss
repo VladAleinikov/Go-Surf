@@ -1,0 +1,18 @@
+.content-title {
+      @include flex(column, start, end, 7px);
+
+      h4 {
+            position: relative;
+
+            &::before {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  left: -103px;
+                  width: 80px;
+                  height: 1px;
+                  opacity: 0.5;
+                  background-color: $white;
+            }
+      }
+}

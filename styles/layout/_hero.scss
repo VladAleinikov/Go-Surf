@@ -1,0 +1,109 @@
+.hero {
+      position: relative;
+      width: 100%;
+      height: 1024px;
+      padding: 40px 80px;
+      padding-left: 209px;
+      @include flex(column, space-between, end);
+
+      .controls__left,
+      .controls__right,
+      .hero__next-section {
+            cursor: pointer;
+
+            path {
+                  transition: 0.5s;
+            }
+            &:hover path {
+                  fill: $accent;
+            }
+      }
+      .hero__controls {
+            @include flex($gap: 20px);
+      }
+      .hero__content {
+            width: 100%;
+            @include flex(row, space-between, end);
+            flex-wrap: wrap;
+
+            .hero__title-list {
+                  position: relative;
+                  width: 100%;
+                  height: 250px;
+
+                  .title-list__item {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 100%;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: 0.5s;
+
+                        &.active {
+                              opacity: 1;
+                              visibility: visible;
+                        }
+                  }
+            }
+      }
+      .hero__buttom-control {
+            width: 100%;
+            @include flex($just: end);
+            margin-bottom: 40px;
+      }
+      .hero__pagination {
+            @include flex($gap: 40px);
+
+            .pagination__item {
+                  cursor: pointer;
+                  @include flex($just: space-between);
+                  position: relative;
+                  width: 200px;
+                  padding-top: 10px;
+
+                  &::before,
+                  &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background-color: $white;
+                  }
+                  &::after {
+                        width: 0%;
+                        background-color: $accent;
+                        transition: 0.5s;
+                  }
+                  &.active::after,
+                  &:hover::after {
+                        width: 100%;
+                  }
+            }
+      }
+      .hero__slides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            img {
+                  position: absolute;
+                  object-fit: cover;
+                  top: 0;
+                  left: 0;
+                  opacity: 0;
+                  visibility: hidden;
+                  transition: 0.5s;
+
+                  &.active {
+                        opacity: 1;
+                        visibility: visible;
+                  }
+            }
+      }
+}
