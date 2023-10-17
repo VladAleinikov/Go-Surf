@@ -13,9 +13,17 @@ h2 {
       line-height: 86px; /* 107.5% */
       text-transform: uppercase;
 
+      &::before {
+            position: absolute;
+            top: 3px;
+            right: 0;
+            width: 80px;
+            height: 1px;
+            background: $accent;
+      }
       &:after {
             position: absolute;
-            left: -50px;
+            left: -295px;
             top: 0;
             font-size: 200px;
             font-style: normal;
