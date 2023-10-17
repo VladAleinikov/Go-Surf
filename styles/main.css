@@ -492,4 +492,128 @@ h6 {
   font-weight: 300;
   line-height: 12px; /* 120% */
   text-transform: uppercase;
+}
+
+.cards {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 32px;
+}
+.cards .cards__controls {
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+.cards .cards__controls .controls__right,
+.cards .cards__controls .controls__left {
+  cursor: pointer;
+}
+.cards .cards__controls .controls__right path,
+.cards .cards__controls .controls__left path {
+  opacity: 0.25;
+  transition: 0.5s;
+}
+.cards .cards__controls .controls__right:hover path,
+.cards .cards__controls .controls__left:hover path {
+  opacity: 1;
+}
+.cards .cards__list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: unset;
+}
+.cards .cards__list .cards__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: unset;
+  position: relative;
+  width: calc((100% + 150px) / 4);
+  height: 750px;
+  margin-right: -50px;
+  padding: 72px 40px;
+  overflow: hidden;
+}
+.cards .cards__list .cards__card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+.cards .cards__list .cards__card h3 {
+  line-height: 36px;
+}
+.cards .cards__list .cards__card p {
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 122.222% */
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+.cards .cards__list .cards__card p span {
+  font-weight: 100;
+}
+.cards .cards__list .cards__card .card__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  bottom: -80px;
+  left: 45px;
+  width: 277px;
+  height: 80px;
+  background: linear-gradient(90deg, transparent 0%, transparent 42%, #4AF6CD 42%, #4AF6CD 100%);
+  transition: 0.5s;
+}
+.cards .cards__list .cards__card .card__btn:after {
+  content: "";
+  position: absolute;
+  left: calc(42% - 10px);
+  width: 20px;
+  height: 1px;
+  background: #FFF;
+}
+.cards .cards__list .cards__card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #1c2121;
+  opacity: 0.85;
+  z-index: -1;
+  transition: 0.5s;
+}
+.cards .cards__list .cards__card:hover .card__btn {
+  bottom: 0;
+}
+.cards .cards__list .cards__card:hover::after {
+  opacity: 0;
+}
+.cards .cards__list .cards__card:first-child {
+  margin-top: 32px;
+}
+.cards .cards__list .cards__card:nth-child(3) {
+  margin-top: 89px;
 }/*# sourceMappingURL=main.css.map */
